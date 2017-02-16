@@ -18,7 +18,7 @@ Next you need to add the full Kids Web Services Parents Android SDK as a depende
 .. code-block:: shell
 
     dependencies {
-      compile 'kws.superawesome.tv.kwsparentsdk:kwsparentsdk:1.1.3'
+      compile 'kws.superawesome.tv.kwsparentsdk:kwsparentsdk:1.2.0'
     }
 
 Once you've integrated the Kids Web Services Parents SDK, you can access all functionality by including:

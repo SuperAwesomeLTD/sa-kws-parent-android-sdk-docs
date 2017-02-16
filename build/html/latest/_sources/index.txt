@@ -8,7 +8,7 @@ With simplicity built into its core, you will be able to effortlessly integrate 
 =========== ========
 Info        Contents
 =========== ========
-Version     1.1.3 (`Changelog <https://github.com/SuperAwesomeLTD/sa-kws-parent-android-sdk/blob/master/CHANGELOG.md>`_)
+Version     1.2.0 (`Changelog <https://github.com/SuperAwesomeLTD/sa-kws-parent-android-sdk/blob/master/CHANGELOG.md>`_)
 Support 		Android 3.0+
 GitHub      https://github.com/SuperAwesomeLTD/sa-kws-parent-android-sdk
 Contact     `devsupport@superawesome.tv <mailto:devsupport@superawesome.tv>`_

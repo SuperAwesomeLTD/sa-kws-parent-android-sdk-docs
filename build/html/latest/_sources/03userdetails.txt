@@ -5,9 +5,9 @@ To obtain information on the user you're authenticated as you'll need to call:
 
 .. code-block:: java
 
-  KWSParent.sdk.getParentData(MainActivity.this, new KWSGetParentInterface() {
+  KWSParent.sdk.getUser (MainActivity.this, new KWSParentGetUserInterface() {
     @Override
-    public void didGetParent(KWSParentUser parent) {
+    public void didGetUser(KWSParentUser parent) {
       if (parent != null) {
         // parent is OK
       } else {

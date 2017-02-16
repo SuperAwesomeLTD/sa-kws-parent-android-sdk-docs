@@ -5,7 +5,7 @@ If you're running an environment which does not support Gradle, then you'll need
 
 You can download the following zip archive:
 
-`KidsWebServicesParentSDK-1.1.3.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/kws_parent_android/1.1.3/KidsWebServicesParentSDK-1.1.3.Android.jars.zip?raw=true>`_
+`KidsWebServicesParentSDK-1.2.0.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/kws_parent_android/1.2.0/KidsWebServicesParentSDK-1.2.0.Android.jars.zip?raw=true>`_
 
 The archive will contain a number of .jar files, representing the components of the SDK.
 Add them to the **lib** folder in your Android project and rebuild the project.

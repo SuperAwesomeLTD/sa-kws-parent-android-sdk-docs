@@ -8,9 +8,9 @@ To login as a parent user you'll have to call:
   final String email = "test@email.com";
   final String password = "testtest";
 
-  KWSParent.sdk.login(this, email, password, new KWSAuthInterface() {
+  KWSParent.sdk.loginUser (this, email, password, new KWSParentLoginUserInterface() {
     @Override
-    public void didAuthUser(boolean operationOK) {
+    public void didLoginUser (boolean operationOK) {
       if (operationOK) {
         // logged in successfully
       } else {
@@ -22,7 +22,7 @@ To login as a parent user you'll have to call:
 The callback will pass the following values on completion:
 
 =========== ======= ======
-Value  	    Type    Meaning 
+Value  	    Type    Meaning
 =========== ======= ======
 operationOK Boolean Login operation was successful
 =========== ======= ======
