@@ -84,22 +84,21 @@ then
 				# goto source folder
 				cd source
 
-				# download latest theme
 				rm -rf $sdk_theme_folder
-				rm -rf $sdk_themeres_folder
-				rm -rf sa-docs-sphinx-theme
-				git clone -b master git@github.com:SuperAwesomeLTD/sa-docs-sphinx-theme.git
-				mkdir $sdk_theme_folder
-				mkdir $sdk_theme_folder/$sdk_theme
-				mkdir $sdk_themeres_folder
-				cp -rf sa-docs-sphinx-theme/* $sdk_theme_folder/$sdk_theme/
-				cp sa-docs-sphinx-theme/static/img/* $sdk_themeres_folder/
-				rm -rf sa-docs-sphinx-theme
-				cd ../
+                rm -rf $sdk_themeres_folder
+                rm -rf sa-docs-sphinx-theme
+                mkdir $sdk_theme_folder
+                mkdir $sdk_theme_folder/$sdk_theme
+                mkdir $sdk_themeres_folder
+                ln -s ../../../sa-docs-sphinx-theme ./sa-docs-sphinx-theme
+                cp -rf sa-docs-sphinx-theme/* $sdk_theme_folder/$sdk_theme/
+                cp sa-docs-sphinx-theme/static/img/* $sdk_themeres_folder/
+                rm -rf sa-docs-sphinx-theme
+                cd ../
 
-				# create temporary source folder
-				rm -rf rsource
-				mkdir rsource
+                # create temporary source folder
+                rm -rf rsource
+                mkdir rsource
 
 				# copy all the source there
 				cp -rf source/* rsource
