@@ -6,10 +6,10 @@
 		"name": "satheme"
 	},
 	"project": {
-		"name": "Android SDK",
+		"name": "",
 		"author": "Gabriel Coman",
 		"source": "https://github.com/SuperAwesomeLTD/sa-kws-parent-android-sdk",
-		"domain": "Parent Safe",
+		"domain": "Android (for Parental engagement)",
 		"min": "Android 3.0+"
 	},
 	"company": {
