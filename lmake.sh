@@ -6,6 +6,7 @@ then
 	sdk_theme_folder=$(cat buildata.json | jq -r '.theme.folder')
 	sdk_themeres_folder=$(cat buildata.json | jq -r '.theme.res')
 	sdk_theme=$(cat buildata.json | jq -r '.theme.name')
+	sdk_color=$(cat buildata.json | jq -r '.theme.color')
 	sdk_project=$(cat buildata.json | jq -r '.project.name')
 	sdk_domain=$(cat buildata.json | jq -r '.project.domain')
 	sdk_author=$(cat buildata.json | jq -r '.project.author')
@@ -85,20 +86,33 @@ then
 				cd source
 
 				rm -rf $sdk_theme_folder
-                rm -rf $sdk_themeres_folder
-                rm -rf sa-docs-sphinx-theme
-                mkdir $sdk_theme_folder
-                mkdir $sdk_theme_folder/$sdk_theme
-                mkdir $sdk_themeres_folder
-                ln -s ../../../sa-docs-sphinx-theme ./sa-docs-sphinx-theme
-                cp -rf sa-docs-sphinx-theme/* $sdk_theme_folder/$sdk_theme/
-                cp sa-docs-sphinx-theme/static/img/* $sdk_themeres_folder/
-                rm -rf sa-docs-sphinx-theme
-                cd ../
+				rm -rf $sdk_themeres_folder
+				rm -rf sa-docs-sphinx-theme
+				mkdir $sdk_theme_folder
+				mkdir $sdk_theme_folder/$sdk_theme
+				mkdir $sdk_themeres_folder
+				if [ -d ../../../sa-docs-sphinx-theme ]
+				then
+					ln -s ../../../sa-docs-sphinx-theme ./sa-docs-sphinx-theme
+				else
+					git clone -b master git@github.com:SuperAwesomeLTD/sa-docs-sphinx-theme.git
+				fi
+				cp -rf sa-docs-sphinx-theme/* $sdk_theme_folder/$sdk_theme/
 
-                # create temporary source folder
-                rm -rf rsource
-                mkdir rsource
+				cd $sdk_theme_folder/$sdk_theme/static/css
+
+				sed -i.sedbak "s|background-color: #c32e21;|background-color: #$sdk_color;|g" *.*
+				find . -name "*.*sedbak" -print0 | xargs -0 rm
+
+				cd ../../../..
+
+				cp sa-docs-sphinx-theme/static/img/* $sdk_themeres_folder/
+				rm -rf sa-docs-sphinx-theme
+				cd ../
+
+				# create temporary source folder
+				rm -rf rsource
+				mkdir rsource
 
 				# copy all the source there
 				cp -rf source/* rsource
